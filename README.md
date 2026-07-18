@@ -1,4 +1,4 @@
-# Customer Support Tikcet ETL Pipeline
+# Customer Support Ticket ETL Pipeline
 
 ## 📌 Deskripsi Proyek
 
