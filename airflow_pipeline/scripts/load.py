@@ -1,5 +1,7 @@
 from pyspark.sql import SparkSession
 from pymongo import MongoClient
+from dotenv import load_dotenv
+import os
 
 spark = SparkSession.builder \
     .appName("Customer Support ETL") \
@@ -9,7 +11,7 @@ spark = SparkSession.builder \
 df = spark.read.parquet("/opt/airflow/data/transform")
 
 
-client = MongoClient("mongodb+srv://mongodb:mongodb@azward-playground.daxgg8h.mongodb.net/")
+client = MongoClient(os.getenv("MONGODB_URI"))
 db_client = client["milestone_3"]
 collection = db_client["customer-support-ticket"]
 
