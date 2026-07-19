@@ -3,6 +3,8 @@ from pymongo import MongoClient
 from dotenv import load_dotenv
 import os
 
+load_dotenv() #load environment variables from .env file
+
 spark = SparkSession.builder \
     .appName("Customer Support ETL") \
     .getOrCreate()
